@@ -63,3 +63,11 @@ GPL v2 or later.
 ## Changelog
 
 For the complete release history, see [CHANGELOG.md](CHANGELOG.md).
+
+---
+
+## About
+
+Lesson Credit Wallet was developed by Baxtersweb to solve a real-world challenge for tutoring businesses using WooCommerce, Tutor LMS and WooCommerce Appointments.
+
+The plugin is released as free and open-source software under the GPL v2 or later licence.
