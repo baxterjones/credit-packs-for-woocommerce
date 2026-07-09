@@ -1,96 +1,95 @@
-=== Lesson Credit Wallet ===
-Contributors: baxtersweb
-Tags: woocommerce, tutor lms, appointments, lesson credits, bookings, tutoring
+=== Credit Packs for WooCommerce ===
+Contributors: baxterjones
+Tags: woocommerce, credits, credit packs, prepaid
 Requires at least: 6.0
-Tested up to: 6.6
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.4
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight Lesson Credit Wallet for WooCommerce appointment-based lesson bookings and Tutor LMS dashboards.
+Sell prepaid credit packs in WooCommerce and let customers redeem credits on selected products.
 
 == Description ==
 
-Lesson Credit Wallet adds prepaid Lesson Credits to WooCommerce lesson booking websites.
+Credit Packs for WooCommerce adds a prepaid pack system to WooCommerce.
 
-It was built for appointment-based education businesses where customers can either pay normally at checkout or purchase packs that grant Lesson Credits for future bookings.
+Create products that grant credits when purchased, then allow selected products to be redeemed using those credits. It is designed for tutoring, classes, consulting, sessions, passes, downloads, service packages, and other prepaid package use cases.
 
-The plugin is designed to make the workflow clear for both customers and administrators:
-
-* Credit Pack products can grant Lesson Credits.
-* Redeemable Lesson products can be booked with Lesson Credits.
-* Customers see their available Lesson Credits on the Tutor LMS dashboard.
-* Product pages clearly explain that credits are optional and normal payment is still available.
-* Admins can manually add or subtract Lesson Credits.
-* A credit ledger records grants, redemptions, refunds, and manual adjustments.
-* Offline/EFT workflows are supported by granting credits when the order is marked Processing or Completed.
+The plugin focuses on credit packs, not loyalty points or store credit.
 
 == Features ==
 
-* WooCommerce product tab for Lesson Credit settings.
-* Product type selector: Standard Product, Credit Pack, or Redeemable Lesson.
-* Credit Pack products grant Lesson Credits after purchase.
-* Redeemable Lesson products can use Lesson Credits at checkout.
-* Tutor LMS dashboard credit card.
-* Admin dashboard with dependencies, setup guidance, ledger, user balances, and changelog.
-* Manual admin credit adjustments.
-* Ledger entries for support and troubleshooting.
-* Full-refund guidance and credit return handling.
-* Offline/EFT workflow support.
-* HPOS-conscious WooCommerce order handling.
+* Credit Pack products can grant credits.
+* Redeemable Products can require credits.
+* Customers can use credits or pay normally.
+* Admins can manually add or subtract credits.
+* Ledger records every credit change.
+* Optional expiry dates for granted credits.
+* Bulk-style product credit settings table.
+* Custom labels for Credits, Sessions, Passes, Lessons, Hours, or similar.
+* Custom frontend messages with template variables.
+* Built-in SVG icons or theme icon class support.
+* Colour and spacing controls for polished frontend cards.
+* Optional Tutor LMS dashboard credit summary card when Tutor LMS is active.
+* Refund and cancellation handling with order notes.
+
+== Installation ==
+
+1. Upload the plugin folder to `/wp-content/plugins/`.
+2. Activate Credit Packs for WooCommerce.
+3. Make sure WooCommerce is active. WooCommerce is the only required plugin.
+4. Go to Credit Packs in the WordPress admin.
+5. Configure labels, frontend display, and product credit settings.
 
 == Requirements ==
 
-* WordPress
 * WooCommerce
-* Tutor LMS
-* WooCommerce Appointments or a WooCommerce-compatible appointable product flow
 
-== Setup ==
+Tutor LMS is an optional supported integration. It is not required for the core credit pack system.
 
-1. Install and activate the plugin.
-2. Go to WooCommerce products.
-3. Edit a product and open the Lesson Credits product data tab.
-4. For pack products, choose Credit Pack and set the number of Lesson Credits granted.
-5. For lesson products, choose Redeemable Lesson and set the number of Lesson Credits required.
-6. Visit the Lesson Credits admin page for setup guidance, manual adjustments, and ledger activity.
+== Shortcodes ==
 
-== Offline / EFT Workflow ==
+Use `[bxtr_credit_packs]` to display the logged-in customer's credit card in a custom location.
 
-If a parent pays directly by bank transfer, an admin can place the order on behalf of the user and select the admin-only EFT payment method.
+Use `[bxtr_credit_packs type="balance"]` to display the balance only.
 
-Credits are granted when the order reaches Processing or Completed, so the admin should only mark the order as paid after payment has been confirmed.
+Use `[bxtr_credit_packs type="product" product_id="123"]` to display a product credit box for a specific WooCommerce product.
 
-== Refund Policy ==
+Advanced Views example: `[bxtr_credit_packs type="product" product_id="{{ _layout.object_id }}"]`.
 
-The recommended workflow is full refunds only.
+== Frequently Asked Questions ==
 
-Partial credit refunds are not supported. If a credit pack has already been partly used, review the account manually before issuing any refund.
+= Is this a wallet plugin? =
+
+No. It is focused on prepaid credit packs. Customers buy packs and redeem credits against eligible WooCommerce products.
+
+= Can I rename Credits to something else? =
+
+Yes. You can use labels such as Sessions, Lessons, Passes, Hours, Tokens, or your own wording.
+
+= Does the plugin load icon libraries? =
+
+No. It includes built-in SVG icons and also supports custom theme icon classes. If you use a theme icon class, your theme or icon library must provide the icon.
 
 == Changelog ==
 
-= 1.0.4 =
-* Removed the plugin website row link from the plugin list.
-* Added GPLv2-or-later licence details.
-* Added WordPress-style readme file.
+= 1.0 =
+* Added the Shortcodes admin tab and `[bxtr_credit_packs]` shortcode support.
+* Added customer card, balance-only, product box, and Advanced Views shortcode examples.
+* Refined product card preview layout and font-size controls.
+* Removed the admin changelog tab.
 
-= 1.0.3 =
-* Added plugin list Settings link.
-* Added View details link to the admin changelog.
-* Added Baxtersweb author URL in plugin details.
+= 1.0.6 =
+* Removed overview width limiter, refined Tutor LMS dashboard insertion, updated theme icon help text, and continued plugin-check cleanup.
+* Refined admin header links, icon settings visibility, ledger search, Tutor LMS dashboard fallback, and admin wording.
 
 = 1.0.2 =
-* Improved product page Pay with Credits wording.
-* Removed bold styling from product page credit messaging and pack links.
-* Hid duration text inside product credit price display.
-* Reduced visual size of Save percentage labels.
-
-= 1.0.1 =
-* Improved lesson product-page wording so Lesson Credits feel optional, not required.
-* Added inline Available Credit Packs with automatic Save percentage labels.
-* Added Credit Pack product-page information showing included 1 Hour Sessions and Lesson Credits.
-* Capitalised Lesson Credit / Lesson Credits consistently.
+* Refined admin layout, style preview, ledger tools, header links, and Tutor LMS dashboard placement.
 
 = 1.0.0 =
-* Initial stable release.
+* Renamed plugin to Credit Packs for WooCommerce.
+* Refactored internals to bxtr_cp prefix and BXTR_CP classes.
+* Added custom labels, frontend display settings, icon options, and message templates.
+* Added product credit settings table.
+* Kept the existing working credit pack, redemption, ledger, refund, and Tutor LMS behaviour.

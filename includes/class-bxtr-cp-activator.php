@@ -1,11 +1,11 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class LCW_Activator {
+class BXTR_CP_Activator {
     public static function activate() {
         global $wpdb;
 
-        $table_name = $wpdb->prefix . 'lcw_credit_ledger';
+        $table_name = $wpdb->prefix . 'bxtr_cp_credit_ledger';
         $charset_collate = $wpdb->get_charset_collate();
 
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -33,10 +33,10 @@ class LCW_Activator {
 
         dbDelta( $sql );
 
-        if ( ! get_option( 'lcw_installed_at' ) ) {
-            update_option( 'lcw_installed_at', current_time( 'mysql' ) );
+        if ( ! get_option( 'bxtr_cp_installed_at' ) ) {
+            update_option( 'bxtr_cp_installed_at', current_time( 'mysql' ) );
         }
 
-        update_option( 'lcw_version', LCW_VERSION );
+        update_option( 'bxtr_cp_version', BXTR_CP_VERSION );
     }
 }

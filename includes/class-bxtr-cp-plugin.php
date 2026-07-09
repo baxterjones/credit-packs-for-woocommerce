@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class LCW_Plugin {
+class BXTR_CP_Plugin {
     private static $instance = null;
 
     public static function instance() {
@@ -12,9 +12,11 @@ class LCW_Plugin {
     }
 
     private function __construct() {
-        LCW_Products::init();
-        LCW_Admin::init();
-        LCW_Tutor::init();
-        LCW_Checkout::init();
+        BXTR_CP_Settings::maybe_upgrade_defaults();
+        BXTR_CP_Products::init();
+        BXTR_CP_Admin::init();
+        BXTR_CP_Tutor::init();
+        BXTR_CP_Checkout::init();
+        BXTR_CP_Shortcodes::init();
     }
 }

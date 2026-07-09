@@ -1,71 +1,25 @@
+## 1.0.6
+- Removed overview width limiter, refined Tutor LMS dashboard insertion, updated theme icon help text, and continued plugin-check cleanup.
+- Refined admin header layout, overview copy, dashboard styling, theme icon output, and message defaults.
+- Improved plugin-check readiness with safer request handling and translation comments.
+
 # Changelog
 
-All notable changes to Lesson Credit Wallet will be documented in this file.
+## 1.0.2
 
-The format is inspired by "Keep a Changelog" and the plugin follows Semantic Versioning.
+- Refined admin layout, style preview, ledger tools, header links, and Tutor LMS dashboard placement.
 
----
+All notable changes to Credit Packs for WooCommerce will be documented in this file.
 
-## [1.0.4] - 2026-07-02
+## 1.0.0
 
-### Added
-- README.md for GitLab.
-- GPL v2 or later licensing.
-- Plugin metadata improvements.
-
-### Changed
-- Improved product page messaging.
-- Added "Pay with Credits" heading.
-- Display available Credit Packs inline.
-- Added "Save X%" labels for discounted packs.
-- Consistent "Lesson Credit(s)" wording throughout the plugin.
-
-### Fixed
-- Removed unnecessary plugin website link.
-- General UI polish.
-
----
-
-## [1.0.3] - 2026-07-02
-
-### Added
-- Settings link on Plugins page.
-- View Details link to plugin admin page.
-- Author URL.
-
----
-
-## [1.0.2] - 2026-07-02
-
-### Changed
-- Refined Tutor LMS credit card.
-- Improved product page layout and styling.
-- Better checkout messaging.
-
----
-
-## [1.0.1] - 2026-07-02
-
-### Added
-- Inline Available Credit Packs.
-- Pack information card.
-- Product page improvements.
-
----
-
-## [1.0.0] - 2026-07-02
-
-### Initial Release
-
-Features
-
-- Credit Pack products.
-- Redeemable Lesson products.
-- Lesson Credit ledger.
-- Manual credit adjustments.
-- Tutor LMS dashboard integration.
-- WooCommerce integration.
-- WooCommerce Appointments integration.
-- HPOS compatible.
-- Offline / EFT workflow.
-- Product validation.
+- Renamed plugin to Credit Packs for WooCommerce.
+- Updated author to Baxter Jones.
+- Refactored internals to `bxtr_cp_` prefixes and `BXTR_CP_*` classes.
+- Renamed storage to `bxtr_cp` meta/options/table naming.
+- Added admin display settings for custom labels, colours, border radius, icons, and customer-facing message templates.
+- Added frontend premium card styling with CSS variables.
+- Added a product credit settings table for faster setup.
+- Retained the existing working credit pack, redemption, ledger, refund/cancellation, and optional Tutor LMS dashboard behaviour.
+- Split the admin screen into tabs for Overview, Products, Customers & Ledger, Labels/Style/Icons, Message Templates, and Changelog.
+- Added a clearer WooCommerce requirement notice when WooCommerce is inactive.
